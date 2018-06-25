@@ -1,9 +1,9 @@
+#include "stdafx.h"
 #include <iostream>
 #include <random>
 #include <chrono>
 #include <thread>
-#include <unistd.h>
-#include "WeatherStation/station.h"
+#include "station.h"
 
 int main()
 {
@@ -11,7 +11,7 @@ int main()
 
     std::random_device rd;
     std::mt19937 mt{ rd() };
-    std::uniform_int_distribution<int> dist{ 0, 10000 };
+    std::uniform_int_distribution<int> const dist{ 0, 10000 };
 
     for (int i{0}; i != 10; ++i)
     {

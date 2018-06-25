@@ -7,8 +7,8 @@
 #include "humidity.h"
 #include "pressure.h"
 #include "record.h"
-#include "../statistics.h" // TODO: Delete #include.
-#include "../current.h" // TODO: Delete #include.
+#include "statistics.h" // TODO: Delete #include.
+#include "current.h" // TODO: Delete #include.
 
 namespace WeatherStation
 {
@@ -21,7 +21,7 @@ namespace WeatherStation
         WeatherViewer::Statistics weather_viewer_statistics_; // TODO: Remove this ConcreteObserver.
 
     public:
-        Station();
+        Station() noexcept;
 
         WeatherViewer::Statistics getWeatherViewerStatistics() const;
         WeatherViewer::Current getWeatherViewerCurrent() const;

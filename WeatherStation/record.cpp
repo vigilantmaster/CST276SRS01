@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include <chrono>
 #include "record.h"
 #include <chrono>

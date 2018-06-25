@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "pressure.h"
 #include <limits>
 

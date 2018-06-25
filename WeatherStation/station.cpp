@@ -1,17 +1,17 @@
-#include "station.h"
+#include "stdafx.h"
 #include <cassert>
 #include <limits>
-#include <type_traits>
-#include <numeric>
+#include "gsl.h"
 #include "temperature.h"
 #include "humidity.h"
 #include "pressure.h"
-#include "../statistics.h"
-#include "../current.h"
+#include "station.h"
+#include "statistics.h"
+#include "current.h"
 
 namespace WeatherStation
 {
-    Station::Station(): weather_viewer_statistics_{ *this }, weather_viewer_current_{ *this }
+    Station::Station() noexcept: weather_viewer_statistics_{ *this }, weather_viewer_current_{ *this }
     {
     }
 
@@ -59,7 +59,7 @@ namespace WeatherStation
         std::chrono::system_clock::time_point const t1
     ) const
     {
-        auto sum{ 0 };
+        auto sum{ 0LL };
         auto total_duration{ std::chrono::system_clock::duration::zero() };
 
         auto period_start{ t0 };
@@ -97,7 +97,7 @@ namespace WeatherStation
         auto mean{ Temperature::default_value };
         if (duration_count > 0)
         {
-            mean = sum / duration_count;
+            mean = gsl::narrow<Temperature::value_type>(sum / duration_count);
         }
         auto const result{ Temperature(mean) };
 
@@ -110,7 +110,7 @@ namespace WeatherStation
         std::chrono::system_clock::time_point const t1
     ) const
     {
-        auto sum{ 0 };
+        auto sum{ 0LL };
         auto total_duration{ std::chrono::system_clock::duration::zero() };
 
         auto period_start{ t0 };
@@ -148,7 +148,7 @@ namespace WeatherStation
         auto mean{ Humidity::default_value };
         if (duration_count > 0)
         {
-            mean = sum / duration_count;
+            mean = gsl::narrow<Humidity::value_type>(sum / duration_count);
         }
         auto const result{ Humidity(mean) };
 
