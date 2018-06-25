@@ -2,7 +2,6 @@
 #include <random>
 #include <chrono>
 #include <thread>
-#include <unistd.h>
 #include "WeatherStation/station.h"
 
 int main()
