@@ -2,6 +2,8 @@
 #include "temperature.h"
 #include <limits>
 
+
+
 namespace WeatherStation
 {
     Temperature::Temperature(value_type const value):

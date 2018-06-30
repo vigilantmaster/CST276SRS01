@@ -2,6 +2,7 @@
 #include "pressure.h"
 #include <limits>
 
+
 namespace WeatherStation
 {
     Pressure::Pressure(value_type const value):
