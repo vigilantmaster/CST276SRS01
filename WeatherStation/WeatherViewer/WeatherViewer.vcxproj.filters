@@ -21,19 +21,10 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="humidity.h">
+    <ClInclude Include="..\WeatherStation\statistics.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pressure.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="station.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="temperature.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="record.h">
+    <ClInclude Include="..\WeatherStation\current.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,26 +32,14 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="WeatherStation.cpp">
+    <ClCompile Include="WeatherViewer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dllmain.cpp">
+    <ClCompile Include="..\WeatherStation\current.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="humidity.cpp">
+    <ClCompile Include="..\WeatherStation\statistics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pressure.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="temperature.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="record.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
 </Project>

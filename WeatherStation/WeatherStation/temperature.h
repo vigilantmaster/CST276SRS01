@@ -18,6 +18,9 @@ namespace WeatherStation
         value_type value_{ default_value };
 
     public:
+        static int GenerateTemp();
+
+    public:
         explicit Temperature(value_type const value);
 
         value_type get() const;

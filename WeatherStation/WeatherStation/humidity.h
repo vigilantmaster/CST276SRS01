@@ -19,6 +19,8 @@ namespace WeatherStation
         value_type get() const;
 
         bool is_good() const;
+
+		static int GenerateHumidity();
     };
 }
 

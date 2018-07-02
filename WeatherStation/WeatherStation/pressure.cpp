@@ -21,4 +21,11 @@ namespace WeatherStation
         return result;
     }
 
+	double Pressure::GeneratePressure()
+	{
+		double value = 0;
+		value = rand() % 29 + 31;
+		return value;
+	}
+
 }
