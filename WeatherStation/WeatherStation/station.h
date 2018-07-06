@@ -8,16 +8,27 @@
 #include "pressure.h"
 #include "record.h"
 #include "IStation.h"
+#include "CustomObserver.h"
+
+
+namespace WeatherViewer {
+	class Statistics;
+	class Current;
+}
 
 namespace WeatherStation
 {
     class Station : IStation 
     {
-    protected:
-	    ~Station() = default;
+    public:
+	    virtual ~Station() = default;
     private:
         std::vector<WeatherStation::Record> history_{};
+		std::list<CustomObserver> observers;
+		
 	public:
+		std::ostream& getCurrent(std::ostream& os, WeatherViewer::Current const& current);
+		std::ostream& getAverage(std::ostream& os, WeatherViewer::Statistics const& statistics);
         Temperature getTemperature() const;
         Humidity getHumidity() const;
         Pressure getPressure() const;
@@ -25,8 +36,13 @@ namespace WeatherStation
         Temperature getMeanTemperature(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;
         Humidity getMeanHumidity(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;
         Pressure getMeanPressure(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;
-			
+
+		void Update() override;
         void measure();
+		void registerObserver(CustomObserver inObserver);
+		void unRegisterObserver(int Observer);
+		void unRegisterObservers();
+		void unRegisterLastObserver();
     };
 }
 

@@ -8,8 +8,9 @@ class IStation
 protected:
 	~IStation() = default;
 public:
-	virtual void Update() = 0 ;
+	virtual void Update();
 
 private:
 	std::list<CustomObserver> observerList;
 };
+

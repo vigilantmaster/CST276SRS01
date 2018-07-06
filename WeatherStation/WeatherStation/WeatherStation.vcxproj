@@ -149,20 +149,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="current.h" />
     <ClInclude Include="humidity.h" />
     <ClInclude Include="IStation.h" />
     <ClInclude Include="pressure.h" />
     <ClInclude Include="record.h" />
     <ClInclude Include="station.h" />
+    <ClInclude Include="statistics.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="temperature.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="current.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="humidity.cpp" />
     <ClCompile Include="pressure.cpp" />
     <ClCompile Include="record.cpp" />
+    <ClCompile Include="statistics.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

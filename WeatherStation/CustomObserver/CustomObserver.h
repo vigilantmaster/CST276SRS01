@@ -1,28 +1,21 @@
 
 #pragma once
 #include "ICustomObserver.h"
+#include "station.h"
+
+namespace WeatherStation {
+	class Station;
+}
 
 class CustomObserver : ICustomObserver
 {
 public:
-	CustomObserver();
-	 void Update() override;
-protected:
-	~CustomObserver();
+	CustomObserver(WeatherStation::Station weather_station);
+	void Update() override;
+public:
+	virtual ~CustomObserver() = default;
 
 private:
-
+	WeatherStation::Station mWeatherStation;
 };
 
-inline CustomObserver::CustomObserver()
-{
-
-}
-
-inline void CustomObserver::Update()
-{
-}
-
-inline CustomObserver::~CustomObserver()
-{
-}
