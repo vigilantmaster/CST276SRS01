@@ -9,7 +9,7 @@ namespace WeatherStation
     Temperature::Temperature(value_type const value):
         value_{ value }
     {
-		srand(time(NULL));
+		srand(time(nullptr));
     }
 
     Temperature::value_type Temperature::get() const

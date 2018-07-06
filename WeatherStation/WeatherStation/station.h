@@ -7,14 +7,15 @@
 #include "humidity.h"
 #include "pressure.h"
 #include "record.h"
-//#include "statistics.h" // TODO: Delete #include.
-//#include "current.h" // TODO: Delete #include.
+#include "IStation.h"
 
 namespace WeatherStation
 {
-    class Station // TODO: Make this a ConcreteSubject.
+    class Station : IStation 
     {
-	private:
+    protected:
+	    ~Station() = default;
+    private:
         std::vector<WeatherStation::Record> history_{};
 	public:
         Temperature getTemperature() const;

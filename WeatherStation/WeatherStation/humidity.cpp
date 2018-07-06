@@ -9,7 +9,7 @@ namespace WeatherStation
     Humidity::Humidity(value_type const value) :
         value_{ value }
     {
-		srand(time(NULL));
+		srand(time(nullptr));
     }
 
     Humidity::value_type Humidity::get() const
