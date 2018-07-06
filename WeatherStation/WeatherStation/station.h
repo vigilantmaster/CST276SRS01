@@ -24,6 +24,8 @@ namespace WeatherStation
 	    virtual ~Station() = default;
     private:
         std::vector<WeatherStation::Record> history_{};
+	private:
+		std::list<CustomObserver> observerList;
 		std::list<CustomObserver> observers;
 		
 	public:

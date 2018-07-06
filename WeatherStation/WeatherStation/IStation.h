@@ -10,7 +10,6 @@ protected:
 public:
 	virtual void Update();
 
-private:
-	std::list<CustomObserver> observerList;
+
 };
 
