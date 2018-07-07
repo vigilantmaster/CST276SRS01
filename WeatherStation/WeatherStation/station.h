@@ -9,6 +9,7 @@
 #include "record.h"
 #include "IStation.h"
 #include "CustomObserver.h"
+#include <list>
 
 
 namespace WeatherViewer {
@@ -25,8 +26,9 @@ namespace WeatherStation
     private:
         std::vector<WeatherStation::Record> history_{};
 	private:
-		std::list<CustomObserver> observerList;
-		std::list<CustomObserver> observers;
+		std::list< class CustomObserver> observerList; //"Severity	Code	Description	Project	File	Line	Suppression State		Error	C2923	'std::list': 'CustomObserver' is not a valid template type argument for parameter '_Ty'	CustomObserver	i : \documents\github\cst276srs01\weatherstation\weatherstation\station.h	29
+
+		std::list<class CustomObserver> observers;
 		
 	public:
 		std::ostream& getCurrent(std::ostream& os, WeatherViewer::Current const& current);

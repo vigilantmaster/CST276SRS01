@@ -1,8 +1,4 @@
 #pragma once
-#include <list>
-#include "CustomObserver.h"
-
-
 class IStation
 {
 protected:

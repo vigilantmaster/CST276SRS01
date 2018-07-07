@@ -2,7 +2,6 @@
 #define WEATHER_STATION_PRESSURE_H
 
 #include <limits>
-
 namespace WeatherStation
 {
     class Pressure
