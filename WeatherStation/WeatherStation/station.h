@@ -8,14 +8,8 @@
 #include "pressure.h"
 #include "record.h"
 #include "IStation.h"
-#include "CustomObserver.h"
+#include "Observer.h"
 #include <list>
-
-
-namespace WeatherViewer {
-	class Statistics;
-	class Current;
-}
 
 namespace WeatherStation
 {
@@ -25,25 +19,27 @@ namespace WeatherStation
 	    virtual ~Station() = default;
     private:
         std::vector<WeatherStation::Record> history_{};
+		static WeatherStation::Station weather_station;
 	private:
-		std::list< class CustomObserver> observerList; //"Severity	Code	Description	Project	File	Line	Suppression State		Error	C2923	'std::list': 'CustomObserver' is not a valid template type argument for parameter '_Ty'	CustomObserver	i : \documents\github\cst276srs01\weatherstation\weatherstation\station.h	29
+		std::vector< class Observer> observerList; 
 
-		std::list<class CustomObserver> observers;
+		std::vector<class Observer> observers;
 		
 	public:
-		std::ostream& getCurrent(std::ostream& os, WeatherViewer::Current const& current);
-		std::ostream& getAverage(std::ostream& os, WeatherViewer::Statistics const& statistics);
+
+		std::ostream& getCurrent(std::ostream& os, Current const& current);
+		std::ostream& getAverage(std::ostream& os, Statistics const& statistics);
         Temperature getTemperature() const;
         Humidity getHumidity() const;
         Pressure getPressure() const;
-
+		static Station & getWeatherStation();
         Temperature getMeanTemperature(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;
         Humidity getMeanHumidity(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;
         Pressure getMeanPressure(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;
 
 		void Update() override;
         void measure();
-		void registerObserver(CustomObserver inObserver);
+		void registerObserver(Observer inObserver);
 		void unRegisterObserver(int Observer);
 		void unRegisterObservers();
 		void unRegisterLastObserver();

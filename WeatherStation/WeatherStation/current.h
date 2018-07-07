@@ -3,7 +3,7 @@
 
 #include <ostream>
 
-namespace WeatherViewer
+namespace WeatherStation
 {
     class Current
     {
