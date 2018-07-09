@@ -7,13 +7,12 @@
 #include "humidity.h"
 #include "pressure.h"
 #include "record.h"
-#include "IStation.h"
 #include "Observer.h"
 #include <list>
 
 namespace WeatherStation
 {
-    class Station : IStation 
+    class Station : Subject
     {
     public:
 	    virtual ~Station() = default;
@@ -24,11 +23,15 @@ namespace WeatherStation
 		std::vector< class Observer> observerList; 
 
 		std::vector<class Observer> observers;
-		
+	public:
+		int& GetState();
+		void SetState(int in);
+
+	private:
+		int* subjectState;
 	public:
 
-		std::ostream& getCurrent(std::ostream& os, Current const& current);
-		std::ostream& getAverage(std::ostream& os, Statistics const& statistics);
+		
         Temperature getTemperature() const;
         Humidity getHumidity() const;
         Pressure getPressure() const;

@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherStation", "WeatherSt
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherViewer", "..\WeatherViewer\WeatherViewer.vcxproj", "{09123C12-A2C0-4F30-990B-F7FC6321AF97}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CustomObserver", "..\CustomObserver\CustomObserver.vcxproj", "{FEF76AE3-135F-46FE-AA6F-03938CB45FB8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Observer", "..\..\..\..\..\source\repos\ObserverPatternTanel\ObserverPatternTanel\ObserverPatternTanel.vcxproj", "{41E83CCB-3331-4CB9-A041-ADB3C424BD51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,14 +33,14 @@ Global
 		{09123C12-A2C0-4F30-990B-F7FC6321AF97}.Release|x64.Build.0 = Release|x64
 		{09123C12-A2C0-4F30-990B-F7FC6321AF97}.Release|x86.ActiveCfg = Release|Win32
 		{09123C12-A2C0-4F30-990B-F7FC6321AF97}.Release|x86.Build.0 = Release|Win32
-		{FEF76AE3-135F-46FE-AA6F-03938CB45FB8}.Debug|x64.ActiveCfg = Debug|x64
-		{FEF76AE3-135F-46FE-AA6F-03938CB45FB8}.Debug|x64.Build.0 = Debug|x64
-		{FEF76AE3-135F-46FE-AA6F-03938CB45FB8}.Debug|x86.ActiveCfg = Debug|Win32
-		{FEF76AE3-135F-46FE-AA6F-03938CB45FB8}.Debug|x86.Build.0 = Debug|Win32
-		{FEF76AE3-135F-46FE-AA6F-03938CB45FB8}.Release|x64.ActiveCfg = Release|x64
-		{FEF76AE3-135F-46FE-AA6F-03938CB45FB8}.Release|x64.Build.0 = Release|x64
-		{FEF76AE3-135F-46FE-AA6F-03938CB45FB8}.Release|x86.ActiveCfg = Release|Win32
-		{FEF76AE3-135F-46FE-AA6F-03938CB45FB8}.Release|x86.Build.0 = Release|Win32
+		{41E83CCB-3331-4CB9-A041-ADB3C424BD51}.Debug|x64.ActiveCfg = Debug|x64
+		{41E83CCB-3331-4CB9-A041-ADB3C424BD51}.Debug|x64.Build.0 = Debug|x64
+		{41E83CCB-3331-4CB9-A041-ADB3C424BD51}.Debug|x86.ActiveCfg = Debug|Win32
+		{41E83CCB-3331-4CB9-A041-ADB3C424BD51}.Debug|x86.Build.0 = Debug|Win32
+		{41E83CCB-3331-4CB9-A041-ADB3C424BD51}.Release|x64.ActiveCfg = Release|x64
+		{41E83CCB-3331-4CB9-A041-ADB3C424BD51}.Release|x64.Build.0 = Release|x64
+		{41E83CCB-3331-4CB9-A041-ADB3C424BD51}.Release|x86.ActiveCfg = Release|Win32
+		{41E83CCB-3331-4CB9-A041-ADB3C424BD51}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
