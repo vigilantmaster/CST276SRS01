@@ -9,7 +9,7 @@ namespace WeatherStation
     class Station;
 }
 
-namespace WeatherStation
+namespace WeatherViewer
 {
     class Statistics
     {

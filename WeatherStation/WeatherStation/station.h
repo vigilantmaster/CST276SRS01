@@ -21,7 +21,6 @@ namespace WeatherStation
 		static WeatherStation::Station weather_station;
 	private:
 		std::vector< class Observer> observerList; 
-
 		std::vector<class Observer> observers;
 	public:
 		int& GetState();
@@ -29,24 +28,15 @@ namespace WeatherStation
 
 	private:
 		int* subjectState;
-	public:
-
-		
+	public:		
         Temperature getTemperature() const;
         Humidity getHumidity() const;
         Pressure getPressure() const;
 		static Station & getWeatherStation();
         Temperature getMeanTemperature(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;
         Humidity getMeanHumidity(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;
-        Pressure getMeanPressure(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;
-
-		void Update() override;
-        void measure();
-		void registerObserver(Observer inObserver);
-		void unRegisterObserver(int Observer);
-		void unRegisterObservers();
-		void unRegisterLastObserver();
+        Pressure getMeanPressure(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;		
+        void measure();	
     };
 }
-
 #endif // WEATHER_STATION_STATION_H

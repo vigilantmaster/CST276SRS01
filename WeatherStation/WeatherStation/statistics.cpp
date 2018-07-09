@@ -3,9 +3,9 @@
 #include "station.h"
 #include "statistics.h"
 
-namespace WeatherStation
+namespace WeatherViewer
 {
-    std::ostream& operator<<(std::ostream& os, WeatherStation::Statistics const& statistics)
+    std::ostream& operator<<(std::ostream& os, WeatherViewer::Statistics const& statistics)
     {
         auto const& station{ statistics.getStation() };
 
