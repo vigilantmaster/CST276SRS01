@@ -9,25 +9,18 @@
 #include "record.h"
 #include "Observer.h"
 #include <list>
+#include "Subject.h"
 
 namespace WeatherStation
 {
-    class Station : Subject
+    class Station : public Subject
     {
     public:
 	    virtual ~Station() = default;
     private:
         std::vector<WeatherStation::Record> history_{};
 		static WeatherStation::Station weather_station;
-	private:
-		std::vector< class Observer> observerList; 
-		std::vector<class Observer> observers;
-	public:
-		int& GetState();
-		void SetState(int in);
 
-	private:
-		int* subjectState;
 	public:		
         Temperature getTemperature() const;
         Humidity getHumidity() const;

@@ -21,12 +21,20 @@ namespace WeatherViewer
         return os;
     }
 
-    Current::Current(WeatherStation::Station const &station): station_{ station }
+    Current::Current(WeatherStation::Station const &station): station_{ station }, temperature(new int), humidity(new int), pressure(new double)
     {
+		
     }
 
     WeatherStation::Station const& Current::getStation() const
     {
         return station_;
     }
+	void Current::Update()
+	{
+
+		*temperature = station_.getTemperature().get();
+		*humidity = station_.getHumidity().get();
+		*pressure =  station_.getPressure().get();
+	}
 }
