@@ -1,9 +1,13 @@
 #ifndef WEATHER_STATION_TEMPERATURE_H
 #define WEATHER_STATION_TEMPERATURE_H
-
+#ifdef WEATHERSTATION_EXPORTS
+#define WEATHERSTATION_EXPORTS __declspec(dllexport)
+#else
+#define WEATHERSTATION_EXPORTS __declspec(dllimport)
+#endif
 namespace WeatherStation
 {
-    class Temperature
+    class WEATHERSTATION_EXPORTS Temperature
     {
     public:
         using value_type = int; // Celsius

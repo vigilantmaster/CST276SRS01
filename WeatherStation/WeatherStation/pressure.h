@@ -1,10 +1,14 @@
 #ifndef WEATHER_STATION_PRESSURE_H
 #define WEATHER_STATION_PRESSURE_H
-
+#ifdef WEATHERSTATION_EXPORTS
+#define WEATHERSTATION_EXPORTS __declspec(dllexport)
+#else
+#define WEATHERSTATION_EXPORTS __declspec(dllimport)
+#endif
 #include <limits>
 namespace WeatherStation
 {
-    class Pressure
+    class WEATHERSTATION_EXPORTS Pressure
     {
     public:
         using value_type = double; // inches Hg (29.9213 in Hg == 1 atmosphere)

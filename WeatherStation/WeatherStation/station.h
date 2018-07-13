@@ -10,10 +10,14 @@
 #include "Observer.h"
 #include <list>
 #include "Subject.h"
-
+#ifdef WEATHERSTATION_EXPORTS
+#define WEATHERSTATION_EXPORTS __declspec(dllexport)
+#else
+#define WEATHERSTATION_EXPORTS __declspec(dllimport)
+#endif
 namespace WeatherStation
 {
-    class Station : public Subject
+    class WEATHERSTATION_EXPORTS Station : public Subject
     {
     public:
 	    virtual ~Station() = default;
