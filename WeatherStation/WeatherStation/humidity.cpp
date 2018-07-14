@@ -24,7 +24,7 @@ namespace WeatherStation
     }
 	int Humidity::GenerateHumidity()
 	{
-		auto const value = rand() % 5 + 100;
+		auto const value = rand() % 90;
 		return value;
 	}
 }
