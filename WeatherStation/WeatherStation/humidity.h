@@ -1,13 +1,9 @@
 #ifndef WEATHER_STATION_HUMIDITY_H
 #define WEATHER_STATION_HUMIDITY_H
-#ifdef WEATHERSTATION_EXPORTS
-#define WEATHERSTATION_EXPORTS __declspec(dllexport)
-#else
-#define WEATHERSTATION_EXPORTS __declspec(dllimport)
-#endif
+#include "StationExports.h"
 namespace WeatherStation
 {
-    class WEATHERSTATION_EXPORTS Humidity
+    class WEATHERSTATION_API Humidity
     {
     public:
         using value_type = int; // percent [0, 100]

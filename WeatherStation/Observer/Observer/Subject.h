@@ -1,7 +1,8 @@
 #pragma once
 #include "Observer.h"
+#include <vector>
 
-class Subject
+class OBSERVER_API Subject
 {
 public:
 	void Attach(Observer* in);
@@ -9,5 +10,5 @@ public:
 	void Notify();
 
 protected:
-	Observer * myObserver;
+	std::vector<Observer*> myObserver;
 };

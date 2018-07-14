@@ -90,7 +90,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\WeatherStation;..\Observer\ObserverPatternTanel;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\WeatherStation;..\Observer\Observer;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -169,6 +169,9 @@
     <ClCompile Include="WeatherViewer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Observer\Observer\Observer.vcxproj">
+      <Project>{a06c65bd-fff7-4030-9261-28dcd64ff47d}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\WeatherStation\WeatherStation.vcxproj">
       <Project>{e93a9ea4-df36-4091-ada2-d030619736f3}</Project>
     </ProjectReference>

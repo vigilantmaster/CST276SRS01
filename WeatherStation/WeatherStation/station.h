@@ -10,21 +10,17 @@
 #include "Observer.h"
 #include <list>
 #include "Subject.h"
-#ifdef WEATHERSTATION_EXPORTS
-#define WEATHERSTATION_EXPORTS __declspec(dllexport)
-#else
-#define WEATHERSTATION_EXPORTS __declspec(dllimport)
-#endif
+#include "StationExports.h"
 namespace WeatherStation
 {
-    class WEATHERSTATION_EXPORTS Station : public Subject
+    class WEATHERSTATION_API Station : public Subject
     {
     public:
 	    virtual ~Station() = default;
     private:
-        std::vector<WeatherStation::Record> history_{};
-		static WeatherStation::Station weather_station;
-
+        std::vector<std::reference_wrapper<WeatherStation::Record>> history_{};
+    public:
+	   static WeatherStation::Station weather_station;
 	public:		
         Temperature getTemperature() const;
         Humidity getHumidity() const;

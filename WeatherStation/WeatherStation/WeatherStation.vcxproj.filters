@@ -36,6 +36,9 @@
     <ClInclude Include="record.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="StationExports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
