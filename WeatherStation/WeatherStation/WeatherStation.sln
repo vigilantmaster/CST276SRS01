@@ -9,6 +9,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WeatherViewer", "..\Weather
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Observer", "..\Observer\Observer\Observer.vcxproj", "{A06C65BD-FFF7-4030-9261-28DCD64FF47D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{03BF6BE5-A2C0-4AAF-A90E-A6DA190BD41D}"
+	ProjectSection(SolutionItems) = preProject
+		..\Read Me Weather Station with Observer.docx = ..\Read Me Weather Station with Observer.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

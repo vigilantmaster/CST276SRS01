@@ -1,0 +1,90 @@
+Weather Station with Observer
+(Using the Observer Pattern)
+	The Weather Station with Observer is a library that depends on a library.  To explain this I say that Weather Station uses the Observer class.  (This means that both the Observer and the Weather Station libs need to be used.)
+
+Methods for Station:
+
+Class Station
+Temperature getTemperature() const;
+	Returns a Class Temperature with a value.
+Humidity getHumidity() const;
+	Returns a Class Humidity with a value.
+Pressure getPressure() const;
+	Return a Class Pressure with a value.
+static Station & getWeatherStation();
+	Returns an instance of Station.
+Temperature getMeanTemperature(std::chrono::system_clock::time_point const t0,        std::chrono::system_clock::time_point const t1) const;
+	Returns a Class Temperature after multiple Temperature changes.
+Humidity getMeanHumidity(std::chrono::system_clock::time_point const t0, std::chrono::system_clock::time_point const t1) const;
+	Returns a Class Humidity after multiple Humidity changes.
+Pressure getMeanPressure(std::chrono::system_clock::time_point const t0, 
+std::chrono::system_clock::time_point const t1) const;
+        Returns a Class Humidity after multiple Pressure changes.		
+void measure();
+	Causes an update to Temperature Humidity and Pressure because I do not have an actual weather station but a representation of one instead.	
+
+Example Usage with a Viewer:
+
+#include "stdafx.h"
+#include <iostream>
+#include <random>
+#include <chrono>
+#include <thread>
+#include "station.h"
+#include "current.h"
+int main()
+{
+	WeatherStation::Station weatherStation;
+	const WeatherViewer::Current currentWeather(weatherStation);	
+	std::random_device rd;
+	std::mt19937 mt{ rd() };
+	std::uniform_int_distribution<int> const dist{ 0, 10000 };
+	for (int i{ 0 }; i != 10; ++i)
+	{
+		auto const sporadic{ dist(mt) };
+		std::this_thread::sleep_for(std::chrono::milliseconds(sporadic));
+		weatherStation.measure();
+		std::cout << " TEMP  |  Humidity  |  Pressure \n" << currentWeather << std::endl;
+	}	
+	return 0;
+}
+
+Note:
+Current is a viewer class and is not part of the Station.
+Weather only changes upon a measure call and is a random number within range.
+Current inherits Observer and Station inherits subject.
+
+Example Usage inside a Viewer:
+
+  class Current : public Observer
+    {
+        friend std::ostream& operator<<(std::ostream& os, Current const& current);
+
+    private:
+        WeatherStation::Station const& station_; 
+		int*  temperature;
+		int* 	humidity;
+		double*	pressure;
+
+    public:
+        explicit Current(WeatherStation::Station const& station);
+
+        WeatherStation::Station const& getStation() const;
+	    void Update() override;
+    };
+
+	void Current::Update()
+	{
+
+		*temperature = station_.getTemperature().get();
+		*humidity = station_.getHumidity().get();
+		*pressure =  station_.getPressure().get();
+	}
+
+SAMPLE OUTPUT:
+TEMP  |  Humidity  |  Pressure
+ 35 (C) |        78%     |  36 in. Hg
+
+ TEMP  |  Humidity  |  Pressure
+ 39 (C)   |     4%         |  52 in. Hg
+
